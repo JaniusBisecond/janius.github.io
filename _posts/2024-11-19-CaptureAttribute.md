@@ -162,7 +162,7 @@ void FGameplayEffectSpec::SetupAttributeCaptureDefinitions()
 
 所以创建 FGameplayEffectSpec 时，Source和Target的BackingDefinition就已经设置好了，只剩下AttributeAggregator没有对象 (刚创建好的Spec在Initialize时会调用CaptureDataFromSource();获取 Source Attributes )
 
-![image-20241118183147291](\docs\assets\MDfileAssets\image-20241118183147291.png)
+![image-20241118183147291](\images\image-20241118183147291.png)
 
 **捕获到的数据最终是存储在 FGameplayEffectSpecHandle 的 CapturedRelevantAttributes 属性中** AttemptCalculateCapturedAttributeMagnitude函数实际就是从 CapturedRelevantAttributes 中获取的对应值
 
@@ -183,7 +183,7 @@ ActiveGameplayEffects 中有 AttributeAggregatorMap 此中保存有需要捕获�
 TMap<FGameplayAttribute, FAggregatorRef>		AttributeAggregatorMap;
 ```
 
-![image-20241117210158719](\docs\assets\MDfileAssets\image-20241117210158719.png)
+![image-20241117210158719](\images\image-20241117210158719.png)
 
 不论Target还是Source，捕获Attribute时都是用的以下函数，执行完以下流程后，会将AttributeAggregatorMap中对应的值放到CapturedRelevantAttributes 中：
 
